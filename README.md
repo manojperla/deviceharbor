@@ -1,5 +1,9 @@
 # DeviceHarbor
 
+[![Weekly quick check](https://github.com/manojperla/deviceharbor/actions/workflows/maintenance.yml/badge.svg?branch=main)](https://github.com/manojperla/deviceharbor/actions/workflows/maintenance.yml)
+
+Every Tuesday, GitHub Actions uses a fresh Linux runner to compile the Appium tests and verify configuration without starting an emulator.
+
 Java 17 + Appium Android automation framework with screen objects and a tiny native Java demo app.
 
 ## Quick checks (no device)
