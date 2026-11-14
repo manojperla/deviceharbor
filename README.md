@@ -45,3 +45,19 @@ Session failure: confirm the APK is an absolute readable path and UiAutomator2 i
 Emulator failures in CI: inspect the emulator step and attached logs before rerunning.
 The `mobile` Maven profile enables Failsafe integration tests; ordinary `verify` only runs unit checks.
 MIT licensed. Created by Manoj Perla.
+
+## Choose the validation level
+
+| Command | Evidence produced |
+|---|---|
+| `mvn verify` | Configuration unit checks and compilation of the mobile test sources. |
+| `mvn -Pmobile verify -Dapp=/absolute/path/to/app-debug.apk` | Configuration checks plus Android device journeys through Failsafe. |
+
+A green quick check does not demonstrate that the APK installs or that a screen
+interaction works. Run the mobile profile after changing screen locators, app
+behavior, Appium dependencies, or device capabilities.
+
+The default Appium endpoint is `http://127.0.0.1:4723`; `device.name` defaults
+to `Android Emulator`. Use `device.udid` to select a connected device explicitly.
+
+See [failure diagnosis](docs/troubleshooting.md) for the evidence to inspect.
